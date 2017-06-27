@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#####
 city = City.create name: 'city'
 city1 = City.create name: 'city1'
 city2 = City.create name: 'city2'
@@ -16,3 +17,8 @@ county.cities<<city<<city1
 county1.cities<<city2<<city3
 state = State.create name: 'Califonia'
 state.counties<<county<<county1
+#####
+mind_map = MindMap.create name: 'mindMap'
+mind_map_node = MindMapNode.create content: 'node'
+mind_map_node1 = MindMapNode.create content: 'node1'
+mind_map.mind_map_nodes<<mind_map_node<<mind_map_node1

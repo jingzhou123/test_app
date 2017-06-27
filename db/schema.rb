@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621093409) do
+ActiveRecord::Schema.define(version: 20170627090100) do
+
+  create_table "mind_map_nodes", force: :cascade do |t|
+    t.text "content"
+    t.integer "mind_map_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mind_map_id"], name: "index_mind_map_nodes_on_mind_map_id"
+  end
+
+  create_table "mind_maps", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "places", force: :cascade do |t|
     t.string "name"

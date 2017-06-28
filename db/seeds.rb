@@ -18,7 +18,10 @@ county1.cities<<city2<<city3
 state = State.create name: 'Califonia'
 state.counties<<county<<county1
 #####
-mind_map = MindMap.create name: 'mindMap'
-mind_map_node = MindMapNode.create content: 'node'
-mind_map_node1 = MindMapNode.create content: 'node1'
-mind_map.mind_map_nodes<<mind_map_node<<mind_map_node1
+mind_map = MindMap.create! name: 'mindMap'
+mind_map_node1 = MindMapNode.create! content: 'node1', mind_map: mind_map
+mind_map_node2 = MindMapNode.create! content: 'node2', mind_map: mind_map
+mind_map_node3 = MindMapNode.create! content: 'node3', mind_map: mind_map
+mind_map_line = MindMapLine.create! mind_map_node: mind_map_node1, other_node: mind_map_node2
+mind_map_node2.other_nodes<<mind_map_node3
+mind_map_node1.other_nodes<<mind_map_node3

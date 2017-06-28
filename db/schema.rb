@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170627090100) do
+ActiveRecord::Schema.define(version: 20170627090951) do
+
+  create_table "mind_map_lines", force: :cascade do |t|
+    t.integer "other_node_id"
+    t.integer "mind_map_node_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mind_map_node_id"], name: "index_mind_map_lines_on_mind_map_node_id"
+    t.index ["other_node_id"], name: "index_mind_map_lines_on_other_node_id"
+  end
 
   create_table "mind_map_nodes", force: :cascade do |t|
     t.text "content"

@@ -25,3 +25,6 @@ mind_map_node3 = MindMapNode.create! content: 'node3', mind_map: mind_map
 mind_map_line = MindMapLine.create! mind_map_node: mind_map_node1, other_node: mind_map_node2
 mind_map_node2.other_nodes<<mind_map_node3
 mind_map_node1.other_nodes<<mind_map_node3
+#####
+Teacher.create name: 'teacher'
+Student.create name: 'student'

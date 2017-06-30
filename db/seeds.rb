@@ -28,3 +28,7 @@ mind_map_node1.other_nodes<<mind_map_node3
 #####
 Teacher.create name: 'teacher'
 Student.create name: 'student'
+#####
+manager = Employee.create name: 'manager'
+subordinate = Employee.create name: 'subordinate'
+manager.subordinates << subordinate

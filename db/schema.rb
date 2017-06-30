@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170630091326) do
+ActiveRecord::Schema.define(version: 20170630092256) do
+
+  create_table "employees", force: :cascade do |t|
+    t.string "name"
+    t.integer "manager_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["manager_id"], name: "index_employees_on_manager_id"
+  end
 
   create_table "mind_map_lines", force: :cascade do |t|
     t.integer "other_node_id"

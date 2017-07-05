@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170705090838) do
+ActiveRecord::Schema.define(version: 20170705091936) do
 
   create_table "employees", force: :cascade do |t|
     t.string "name"
@@ -65,7 +65,15 @@ ActiveRecord::Schema.define(version: 20170705090838) do
     t.integer "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "tree_id"
     t.index ["parent_id"], name: "index_tree_nodes_on_parent_id"
+    t.index ["tree_id"], name: "index_tree_nodes_on_tree_id"
+  end
+
+  create_table "trees", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

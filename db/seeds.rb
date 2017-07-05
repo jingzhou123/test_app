@@ -32,3 +32,8 @@ Student.create name: 'student'
 manager = Employee.create name: 'manager'
 subordinate = Employee.create name: 'subordinate'
 manager.subordinates << subordinate
+#####
+n1 = TreeNode.create
+n2 = TreeNode.create
+n3 = TreeNode.create
+n1.children<<n2<<n3

@@ -36,4 +36,8 @@ manager.subordinates << subordinate
 n1 = TreeNode.create
 n2 = TreeNode.create
 n3 = TreeNode.create
+n4 = TreeNode.create
+tree = Tree.create name: "tree"
+n2.children<<n4
 n1.children<<n2<<n3
+tree.tree_nodes<<n1

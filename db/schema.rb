@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170713072743) do
+ActiveRecord::Schema.define(version: 20170713075117) do
 
   create_table "employees", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 20170713072743) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["manager_id"], name: "index_employees_on_manager_id"
+  end
+
+  create_table "explorer_nodes", force: :cascade do |t|
+    t.string "name"
+    t.integer "node_type", default: 0, null: false
+    t.integer "parent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["parent_id"], name: "index_explorer_nodes_on_parent_id"
   end
 
   create_table "mind_map_lines", force: :cascade do |t|

@@ -46,3 +46,11 @@ folder1 = ExpFolder.create! exp_name: "folder1"
 f1 = ExpFile.create! exp_name: "file1", parent: folder1
 f2 = ExpFile.create! exp_name: "file2", parent: folder1
 folder2 = ExpFolder.create! exp_name: "folder2", parent: folder1
+#####
+root = ExplorerNode.create! name: "root", node_type: ExplorerNode.node_types["folder"]
+f1 = ExplorerNode.create! name: "file", node_type: ExplorerNode.node_types["file"]
+f2 = ExplorerNode.create! name: "file", node_type: ExplorerNode.node_types["file"]
+f3 = ExplorerNode.create! name: "folder", node_type: ExplorerNode.node_types["folder"]
+f4 = ExplorerNode.create! name: "file", node_type: ExplorerNode.node_types["file"]
+root.children<<f1<<f2<<f3
+f3.children<<f4

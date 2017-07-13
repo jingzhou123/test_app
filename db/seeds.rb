@@ -41,3 +41,8 @@ tree = Tree.create name: "tree"
 n2.children<<n4
 n1.children<<n2<<n3
 tree.tree_nodes<<n1
+#####
+folder1 = ExpFolder.create! exp_name: "folder1"
+f1 = ExpFile.create! exp_name: "file1", parent: folder1
+f2 = ExpFile.create! exp_name: "file2", parent: folder1
+folder2 = ExpFolder.create! exp_name: "folder2", parent: folder1

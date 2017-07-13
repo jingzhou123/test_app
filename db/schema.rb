@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170705091936) do
+ActiveRecord::Schema.define(version: 20170713072743) do
 
   create_table "employees", force: :cascade do |t|
     t.string "name"
@@ -66,6 +66,10 @@ ActiveRecord::Schema.define(version: 20170705091936) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "tree_id"
+    t.integer "exp_folder_id"
+    t.string "type"
+    t.string "exp_name"
+    t.index ["exp_folder_id"], name: "index_tree_nodes_on_exp_folder_id"
     t.index ["parent_id"], name: "index_tree_nodes_on_parent_id"
     t.index ["tree_id"], name: "index_tree_nodes_on_tree_id"
   end
